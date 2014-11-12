@@ -32,7 +32,7 @@ class FrontendRequestToken extends \Frontend
         if(TL_MODE=='FE')
         {
             array_insert($GLOBALS['TL_HEAD'], 0, array(
-                '<script>var HB = {request_token: "' . REQUEST_TOKEN . '"};</script>'
+                '<script>var HB = HB || {}; HB.request_token = "' . REQUEST_TOKEN . '";</script>'
             ));
         }
     }
