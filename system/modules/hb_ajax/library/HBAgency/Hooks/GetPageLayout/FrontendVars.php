@@ -21,18 +21,18 @@ namespace HBAgency\Hooks\GetPageLayout;
  * @author     Adam Fisher <afisher@hbagency.com>
  * @package    HBAjax
  */
-class FrontendRequestToken extends \Frontend
+class FrontendVars extends \Frontend
 {
 
     /**
      * Add the token
      */
-    public function run()
+    public function run($objPage, &$objLayout, $objPageRegular)
     {
         if(TL_MODE=='FE')
         {
             array_insert($GLOBALS['TL_HEAD'], 0, array(
-                '<script>var HB = HB || {}; HB.request_token = "' . REQUEST_TOKEN . '";</script>'
+                '<script>var HB = HB || {}; HB.request_token = "' . REQUEST_TOKEN . '"; HB.pageid = "' . $objPage->id . '"; HB.here = "'.\Environment::get('host').\Environment::get('path'). '/'.\Environment::get('request').'"; HB.alias = "' . $objPage->alias . '";</script>'
             ));
         }
     }

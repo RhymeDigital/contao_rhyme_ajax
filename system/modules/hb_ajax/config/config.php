@@ -15,4 +15,4 @@
  * Hooks
  */
 $GLOBALS['TL_HOOKS']['ajaxRequest'][]		= array('HBAgency\Hooks\AjaxRequest\GetRequestToken', 'run');
-$GLOBALS['TL_HOOKS']['getPageLayout'][]		= array('HBAgency\Hooks\GetPageLayout\FrontendRequestToken', 'run');
+$GLOBALS['TL_HOOKS']['getPageLayout'][]		= array('HBAgency\Hooks\GetPageLayout\FrontendVars', 'run');
