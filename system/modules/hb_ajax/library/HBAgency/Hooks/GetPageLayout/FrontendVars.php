@@ -32,7 +32,7 @@ class FrontendVars extends \Frontend
         if(TL_MODE=='FE')
         {
             array_insert($GLOBALS['TL_HEAD'], 0, array(
-                '<script>var HB = HB || {}; HB.request_token = "' . REQUEST_TOKEN . '"; HB.pageid = "' . $objPage->id . '"; HB.here = "'.\Environment::get('host').\Environment::get('path'). '/'.\Environment::get('request').'"; HB.alias = "' . $objPage->alias . '";</script>'
+                '<script>var HB = HB || {}; HB.request_token = "' . REQUEST_TOKEN . '"; HB.pageid = "' . $objPage->id . '"; HB.base = "'.\Environment::get('base').'"; HB.request = "'.\Environment::get('request').'"; HB.alias = "' . $objPage->alias . '";</script>'
             ));
         }
     }
