@@ -3,16 +3,16 @@
 /**
  * Ajax handler for Contao Open Source CMS
  *
- * Copyright (c) 2014 HBAgency
+ * Copyright (c) 2015 Rhyme Digital
  *
- * @package HBAjax
- * @link    http://www.hbagency.com
+ * @package RhymeAjax
+ * @link    http://rhyme.digital
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
 namespace Contao;
 
-use HBAgency\AjaxInput;
+use Rhyme\AjaxInput;
 
 /**
  * Set the script name
@@ -31,10 +31,10 @@ require __DIR__ . '/../system/initialize.php';
  * Class AjaxFrontend
  *
  * Main front end ajax controller.
- * @copyright  HBAgency 2014
- * @author     Blair Winans <bwinans@hbagency.com>
- * @author     Adam Fisher <afisher@hbagency.com>
- * @package    HBAjax
+ * @copyright  Rhyme Digital 2015
+ * @author     Blair Winans <blair@rhyme.digital>
+ * @author     Adam Fisher <adam@rhyme.digital>
+ * @package    RhymeAjax
  */
 class AjaxFrontend extends \PageRegular
 {

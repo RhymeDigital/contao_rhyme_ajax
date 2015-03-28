@@ -3,29 +3,30 @@
 /**
  * Ajax handler for Contao Open Source CMS
  *
- * Copyright (c) 2014 HBAgency
+ * Copyright (c) 2015 Rhyme Digital
  *
- * @package HBAjax
- * @link    http://www.hbagency.com
+ * @package RhymeAjax
+ * @link    http://rhyme.digital
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
-namespace HBAgency\Hooks\GetPageLayout;
+namespace Rhyme\Hooks\GetPageLayout;
 
 
 /**
  * Add a Request Token to the Frontend for global use
  *
- * @copyright  HBAgency 2014
- * @author     Blair Winans <bwinans@hbagency.com>
- * @author     Adam Fisher <afisher@hbagency.com>
- * @package    HBAjax
+ * @copyright  Rhyme Digital 2015
+ * @author     Blair Winans <blair@rhyme.digital>
+ * @author     Adam Fisher <adam@rhyme.digital>
+ * @package    RhymeAjax
  */
 class FrontendVars extends \Frontend
 {
 
     /**
      * Add the token
+     * @!todo - Update JS namespace to Rhyme
      */
     public function run($objPage, &$objLayout, $objPageRegular)
     {
