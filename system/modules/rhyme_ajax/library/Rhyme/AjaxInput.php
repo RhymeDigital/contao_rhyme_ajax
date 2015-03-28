@@ -3,10 +3,10 @@
 /**
  * Ajax handler for Contao Open Source CMS
  *
- * Copyright (c) 2014 HBAgency
+ * Copyright (c) 2015 Rhyme Digital
  *
- * @package HBAjax
- * @link    http://www.hbagency.com
+ * @package RhymeAjax
+ * @link    http://rhyme.digital
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
@@ -17,13 +17,19 @@ namespace HBAgency;
  * Safely store $POST and $GET vars from ajax requests
  * so that they are ONLY used by AJAX-enabled modules
  *
- * @copyright  HBAgency 2014
- * @author     Blair Winans <bwinans@hbagency.com>
- * @author     Adam Fisher <afisher@hbagency.com>
- * @package    HBAjax
+ * @copyright  Rhyme Digital 2015
+ * @author     Blair Winans <blair@rhyme.digital>
+ * @author     Adam Fisher <adam@rhyme.digital>
+ * @package    RhymeAjax
  */
 class AjaxInput extends \Input
 {
+    
+    /**
+	 * Cache
+	 * @var array
+	 */
+	protected static $arrCache = array();
 
 	/**
 	 * Clean the input
@@ -81,6 +87,28 @@ class AjaxInput extends \Input
 	    $strCacheKey = $blnDecodeEntities ? 'postDecoded' : 'postEncoded';
 	    
 	    return static::$arrCache[$strCacheKey][$strKey];
+	}
+	
+	/**
+	 * Restore the GET and POST vars to Contao's Input class
+	 */
+	public static function restore()
+	{
+    	if(isset(static::$arrCache['getEncoded']))
+    	{
+        	foreach(static::$arrCache['getEncoded'] as $strKey => $varValue)
+        	{
+                \Input::setGet($strKey, $varValue);
+        	}
+        }
+    	
+    	if(isset(static::$arrCache['postEncoded']))
+    	{
+        	foreach(static::$arrCache['postEncoded'] as $strKey => $varValue)
+        	{
+                \Input::setPost($strKey, $varValue);
+        	}
+        }
 	}
 
 	/**

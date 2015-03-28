@@ -3,16 +3,16 @@
 /**
  * Ajax handler for Contao Open Source CMS
  *
- * Copyright (c) 2014 HBAgency
+ * Copyright (c) 2015 Rhyme Digital
  *
- * @package HBAjax
- * @link    http://www.hbagency.com
+ * @package RhymeAjax
+ * @link    http://rhyme.digital
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
-namespace HBAgency\Hooks\AjaxRequest;
+namespace Rhyme\Hooks\AjaxRequest;
 
-use HBAgency\AjaxInput;
+use Rhyme\AjaxInput;
 use Haste\Http\Response\HtmlResponse;
 
 
@@ -21,10 +21,10 @@ use Haste\Http\Response\HtmlResponse;
  * Class GetRequestToken
  *
  * Get a request token
- * @copyright  HBAgency 2014
- * @author     Blair Winans <bwinans@hbagency.com>
- * @author     Adam Fisher <afisher@hbagency.com>
- * @package    HBAjax
+ * @copyright  Rhyme Digital 2015
+ * @author     Blair Winans <blair@rhyme.digital>
+ * @author     Adam Fisher <adam@rhyme.digital>
+ * @package    RhymeAjax
  */
 class GetRequestToken extends \Controller
 {
