@@ -1,0 +1,43 @@
+{
+    "name": "rhymedigital/contao_rhyme_ajax",
+    "description": "An extension for Contao Open Source CMS that allows you to do simple AJAX calls on the front end.",
+    "keywords": [
+    	"ajax", 
+    	"contao",
+    ],
+    "type": "contao-module",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Rhyme Digital",
+            "homepage": "http://rhyme.digital"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "contao/core": ">=3.3.0,<4.0.0-dev",
+        "contao-community-alliance/composer-installer": "*",
+        "terminal42/contao-namespace-class-loader":">=1.0.1",
+        "codefog/contao-haste":"4.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rhyme\\": [
+                "system/modules/rhyme_ajax/library/"
+            ]
+        }
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "ajax":"ajax",
+                "system/modules/rhyme_ajax": "system/modules/rhyme_ajax"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "preferred-install": "dist"
+    }
+}
