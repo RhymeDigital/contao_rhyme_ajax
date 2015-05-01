@@ -40,9 +40,7 @@ class HandleLegacy extends \Controller
         if (AjaxInput::get('action')=='fmd' && AjaxInput::get('id') > 0)
         {
             //Restore Input vars
-            \System::log('AjaxInput 1 "'.AjaxInput::get('id'), __METHOD__, TL_ERROR);
             AjaxInput::restore();
-            \System::log('AjaxInput 2 "'.AjaxInput::get('id'), __METHOD__, TL_ERROR);
             $strBuffer = static::getFrontendModuleAjax(AjaxInput::get('id'));
             $objResponse = new HtmlResponse($strBuffer);
             $objResponse->send();
