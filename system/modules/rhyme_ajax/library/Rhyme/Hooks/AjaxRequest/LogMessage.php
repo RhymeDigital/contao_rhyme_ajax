@@ -18,25 +18,26 @@ use Haste\Http\Response\HtmlResponse;
 
 
 /**
- * Class GetRequestToken
+ * Class LogMessage
  *
- * Get a request token
+ * Log a message
  * @copyright  Rhyme Digital 2015
  * @author     Blair Winans <blair@rhyme.digital>
  * @author     Adam Fisher <adam@rhyme.digital>
  * @package    RhymeAjax
  */
-class GetRequestToken extends \Controller
+class LogMessage extends \Controller
 {
     /**
-     * Get a request token
+     * Log a message in Contao
      * @return void
      */
     public function run()
     {
-        if (AjaxInput::post('action')=='getRequestToken')
+        if (AjaxInput::get('action')=='logMessage' && AjaxInput::get('logDetails'))
         {
-            $objResponse = new HtmlResponse(\RequestToken::get());
+			\System::log(AjaxInput::get('logDetails'), AjaxInput::get('logMethod') ?: __METHOD__, AjaxInput::get('logCategory') ?: TL_GENERAL);
+            $objResponse = new HtmlResponse(1);
             $objResponse->send();
         }
     }

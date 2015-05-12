@@ -16,4 +16,5 @@
  */
 $GLOBALS['TL_HOOKS']['ajaxRequest'][]		= array('Rhyme\Hooks\AjaxRequest\GetRequestToken', 'run');
 $GLOBALS['TL_HOOKS']['ajaxRequest'][]		= array('Rhyme\Hooks\AjaxRequest\HandleLegacy', 'run');
+$GLOBALS['TL_HOOKS']['ajaxRequest'][]		= array('Rhyme\Hooks\AjaxRequest\LogMessage', 'run');
 $GLOBALS['TL_HOOKS']['getPageLayout'][]		= array('Rhyme\Hooks\GetPageLayout\FrontendVars', 'run');
