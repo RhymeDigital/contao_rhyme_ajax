@@ -13,7 +13,7 @@
 namespace Rhyme\Hooks\AjaxRequest;
 
 use Rhyme\AjaxInput;
-use Haste\Http\Response\HtmlResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 
 
@@ -42,7 +42,7 @@ class HandleLegacy extends \Controller
             //Restore Input vars
             AjaxInput::restore();
             $strBuffer = static::getFrontendModuleAjax(AjaxInput::get('id'));
-            $objResponse = new HtmlResponse($strBuffer);
+            $objResponse = new Response($strBuffer);
             $objResponse->send();
         }
         
@@ -52,7 +52,7 @@ class HandleLegacy extends \Controller
             //Restore Input vars
             AjaxInput::restore();
             $strBuffer = static::getContentElementAjax(AjaxInput::get('id'));
-            $objResponse = new HtmlResponse($strBuffer);
+            $objResponse = new Response($strBuffer);
             $objResponse->send();
         }
         
@@ -62,7 +62,7 @@ class HandleLegacy extends \Controller
             //Restore Input vars
             AjaxInput::restore();
             $strBuffer = static::getFormFieldAjax(AjaxInput::get('id'));
-            $objResponse = new HtmlResponse($strBuffer);
+            $objResponse = new Response($strBuffer);
             $objResponse->send();
         }
         

@@ -13,31 +13,30 @@
 namespace Rhyme\Hooks\AjaxRequest;
 
 use Rhyme\AjaxInput;
-use Haste\Http\Response\HtmlResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 
 
 /**
- * Class LogMessage
+ * Class GetRequestToken
  *
- * Log a message
+ * Get a request token
  * @copyright  Rhyme Digital 2015
  * @author     Blair Winans <blair@rhyme.digital>
  * @author     Adam Fisher <adam@rhyme.digital>
  * @package    RhymeAjax
  */
-class LogMessage extends \Controller
+class GetRequestToken extends \Controller
 {
     /**
-     * Log a message in Contao
+     * Get a request token
      * @return void
      */
     public function run()
     {
-        if (AjaxInput::get('action')=='logMessage' && AjaxInput::get('logDetails'))
+        if (AjaxInput::post('action')=='getRequestToken')
         {
-			\System::log(AjaxInput::get('logDetails'), AjaxInput::get('logMethod') ?: __METHOD__, AjaxInput::get('logCategory') ?: TL_GENERAL);
-            $objResponse = new HtmlResponse(1);
+            $objResponse = new Response(\RequestToken::get());
             $objResponse->send();
         }
     }
