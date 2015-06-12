@@ -26,14 +26,13 @@ class FrontendVars extends \Frontend
 
     /**
      * Add the token
-     * @!todo - Update JS namespace to Rhyme
      */
     public function run($objPage, &$objLayout, $objPageRegular)
     {
         if(TL_MODE=='FE')
         {
             array_insert($GLOBALS['TL_HEAD'], 0, array(
-                '<script>var HB = HB || {}; HB.request_token = "' . REQUEST_TOKEN . '"; HB.pageid = "' . $objPage->id . '"; HB.base = "'.\Environment::get('base').'"; HB.request = "'.\Environment::get('request').'"; HB.alias = "' . $objPage->alias . '";</script>'
+                '<script>var Rhyme = Rhyme || {}; Rhyme.request_token = "' . REQUEST_TOKEN . '"; Rhyme.pageid = "' . $objPage->id . '"; Rhyme.base = "'.\Environment::get('base').'"; Rhyme.request = "'.\Environment::get('request').'"; Rhyme.alias = "' . $objPage->alias . '";</script>'
             ));
         }
     }
