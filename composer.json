@@ -22,7 +22,7 @@
     "extra": {
         "contao": {
             "sources": {
-                "ajax":"ajax",
+                "ajax":"ajax"
             }
         }
     },
