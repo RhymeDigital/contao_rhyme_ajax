@@ -33,7 +33,7 @@ class FrontendVars extends \Frontend
         {
             $objTemplate = new \FrontendTemplate('rhyme_jsvars');
             array_insert($GLOBALS['TL_HEAD'], 0, array(
-                $objTemplate->parse();
+                $objTemplate->parse()
             ));
         }
     }
