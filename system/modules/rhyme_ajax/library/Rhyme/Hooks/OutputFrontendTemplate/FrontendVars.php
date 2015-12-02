@@ -10,7 +10,7 @@
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  */
 
-namespace Rhyme\Hooks\GetPageLayout;
+namespace Rhyme\Hooks\OutputFrontendTemplate;
 
 
 /**
@@ -27,14 +27,14 @@ class FrontendVars extends \Frontend
     /**
      * Add the token
      */
-    public function run($objPage, &$objLayout, $objPageRegular)
+    public function run($strBuffer, $strTemplate)
     {
-        if(TL_MODE=='FE')
+        if(strpos($strTemplate, 'fe_') !== false)
         {
             $objTemplate = new \FrontendTemplate('rhyme_jsvars');
-            array_insert($GLOBALS['TL_HEAD'], 0, array(
-                $objTemplate->parse()
-            ));
+            $strBuffer = str_replace('</head>', $objTemplate->parse() . "\n" . '</head>', $strBuffer);
         }
+        
+        return $strBuffer;
     }
 }
