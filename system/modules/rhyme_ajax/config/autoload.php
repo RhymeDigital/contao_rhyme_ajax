@@ -15,3 +15,13 @@
  * Register namespace
  */
 NamespaceClassLoader::add('Rhyme', 'system/modules/rhyme_ajax/library');
+
+/**
+ * Register the templates
+ */
+TemplateLoader::addFiles(array
+(
+    //Frontend
+    'rhyme_jsvars'                => 'system/modules/rhyme_ajax/templates/script',
+    
+));

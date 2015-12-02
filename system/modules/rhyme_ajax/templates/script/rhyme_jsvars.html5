@@ -1,0 +1,3 @@
+<script>
+var Rhyme = Rhyme || {}; Rhyme.request_token = "{{request_token}}"; Rhyme.pageid = "{{page::id}}"; Rhyme.base = "{{env::path}}"; Rhyme.request = "{{env::request}}"; Rhyme.alias = "{{page::alias}}";
+</script>
