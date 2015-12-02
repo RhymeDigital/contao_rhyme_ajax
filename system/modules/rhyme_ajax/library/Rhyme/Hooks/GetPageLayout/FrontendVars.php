@@ -31,8 +31,9 @@ class FrontendVars extends \Frontend
     {
         if(TL_MODE=='FE')
         {
+            $objTemplate = new \FrontendTemplate('rhyme_jsvars');
             array_insert($GLOBALS['TL_HEAD'], 0, array(
-                '<script>var Rhyme = Rhyme || {}; Rhyme.request_token = "{{request_token}}"; Rhyme.pageid = "' . $objPage->id . '"; Rhyme.base = "'.\Environment::get('base').'"; Rhyme.request = "'.\Environment::get('request').'"; Rhyme.alias = "' . $objPage->alias . '";</script>'
+                $objTemplate->parse();
             ));
         }
     }
